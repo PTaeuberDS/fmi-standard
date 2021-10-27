@@ -12,6 +12,7 @@ Each state description lists the governing equations and actions and the corresp
 .Common calling sequence for C functions of common states for all three FMI types.
 [#figure-common-state-machine]
 image::images/state-machines-common-states.svg[width=80%, align="center"]
+#TODO: The description of that figure says that only states common for all FMI types are depicted, but Event Mode is not available for Scheduled Execution and Intermediate Update Mode is not available for Model Exchange. The description should be changed or/and states only valid for two FMI types should be marked, e.g. as dashed boxes.
 
 The state machine is given here as UML 2.0 state machine.
 If a transition is labeled with one or more function names (for example, <<fmi3EnterInitializationMode>>, <<fmi3EnterEventMode>>), the transition is taken if the function call returns successfully (not `NULL` for <<fmi3Instantiate>> or <<fmi3OK>> and <<fmi3Warning>> for all other functions).
@@ -725,6 +726,7 @@ _[The following use cases are enabled:_
 * _Access to intermediate variables enables advanced Co-Simulation with interpolation/extrapolation techniques (such as polynomial extrapolation, <<transmission-line-modeling>> (<<tlm>>) co-simulation, anti-alias filtering, smoothing of input among others)._
 * _<<IntermediateUpdateMode>> enables the same input approximation that was possible in FMI 2.0 with `fmi2SetInputDerivatives`, by evaluation of the approximation polynomial by the importer and not within the FMU as in FMI 2.0_
 * _FMUs can inform the importer about an event, which occurs during an <<fmi3DoStep>> in case of CS (see <<fmi-for-co-simulation>>)._
+#TODO: Is this still valid? EventOccurred moved to fmi3DoStep so in Intermediate Update Mode no events can be signaled.
 * _The Co-Simulation algorithm can request an <<early-return,early return>> from <<fmi3DoStep>>, because of an event between communication points (see <<early-return>>)._
 * _A model partition of a Scheduled Execution FMU calls <<fmi3CallbackIntermediateUpdate>> to signal clock activations with `clocksTicked == fmi3True`._
 

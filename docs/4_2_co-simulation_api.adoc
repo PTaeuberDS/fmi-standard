@@ -124,7 +124,7 @@ _<<fixedInternalStepSize>> was introduced to reduce these effects._
 ** _A variable-step integrator with minimal step size is not able to land exactly at_ latexmath:[\mathbf{t}_\mathit{i+1}]_.]_
 
 Function <<fmi3CallbackIntermediateUpdate>>::
-<<fmi3CallbackIntermediateUpdate>> switches the FMU itself into the <<IntermediateUpdateMode>>.
+<<fmi3CallbackIntermediateUpdate>> can be called by the FMU itself and switches it into <<IntermediateUpdateMode>>.
 
 [[fmi3EnterEventModeCS,`fmi3EnterEventMode`]]
 Function <<fmi3EnterEventMode>>::
@@ -134,3 +134,5 @@ This function must not be called, if <<fmi3InstantiateCoSimulation>> signaled <<
 Function <<fmi3EnterConfigurationMode>>::
 <<fmi3EnterConfigurationMode>> changes state to <<ReconfigurationMode>>.
 <<fmi3EnterConfigurationMode>> must not be called if the FMU contains no <<tunable>> <<structuralParameter,`structural parameters`>> (i.e. with <<causality>>= <<structuralParameter>> and <<variability>> = <<tunable>>).
+
+#TODO: Paragraphs use different formats (using the header as the beginning of the sentence (capitalized and non-capitalized) vs. repeating the function name at the beginning of the sentence vs. starting a new sentence without function name at the beginning)

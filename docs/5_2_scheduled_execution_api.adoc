@@ -85,7 +85,7 @@ _Observe two examples:_
 * _An output variable is written by two different model partitions._
 _The values returned by <<get-and-set-variable-values,`fmi3Get`>> that is placed after <<fmi3ActivateModelPartition>> may return the values computed by the other model partition if that model partition has higher priority and preempted the task execution meanwhile._
 * _An input variable is read by two different model partitions._
-_The variable values of a model partitions of lower priority may have been overwritten by a call to <<get-and-set-variable-values,`fmi3Set`>> in the context of a task executed for a model partition of higher priority._
+_The variable values of a model partition of lower priority may have been overwritten by a call to <<get-and-set-variable-values,`fmi3Set`>> in the context of a task executed for a model partition of higher priority._
 
 _Note that if every variable is assigned uniquely to a model partition it is also not necessary to use <<preemption-support, `preemption locks`>> in the context of <<get-and-set-variable-values,`fmi3Get`>> and <<get-and-set-variable-values,`fmi3set`>>.]_
 

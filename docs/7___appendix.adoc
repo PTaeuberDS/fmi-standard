@@ -153,7 +153,7 @@ Most important, data for every variable is defined (variable name, handle, data 
 
 |_model rate_
 |Inverse of time interval between two communication points associated to an exposed model partition within the FMU (i.e. <<Clock>> is defined in interface).
-In general multiple rates i.e. multiple model partitions can be defined for an Co-Simulation FMU.
+In general multiple rates i.e. multiple model partitions can be defined for a Co-Simulation FMU.
 
 |[[model-partition,model partition]]_model partition_
 |Model partitions can be associated to a discrete or (piecewise) continuous part of the FMU.
@@ -164,8 +164,10 @@ Nevertheless, it is assumed that the activation of all exposed <<inputClock,`inp
 
 As stated above, continuous parts of the FMU are also associated to model partitions that define the communication points for the <<continuous>> values.
 
+In Scheduled Execution mode model partitions typically represent tasks that are scheduled by the environment, e.g. via input clocks.
+
 |_ODE_
-|see _Ordinary Differential Equation_
+|See _Ordinary Differential Equation_.
 
 |_Ordinary Differential Equation_
 |Differential equation containing one or more functions of one independent variable (typically time) and the derivatives of those functions.
@@ -182,30 +184,30 @@ Examples are a mass, stiffness, etc.
 These parameters are different from <<calculatedParameter,calculated parameters>>, because they can be changed independently (according to their <<variability>>).
 
 |_runtime environment_
-|See co-simulation environment
+|See co-simulation environment.
 
 |_scheduled execution_
 |FMI type that externalizes the scheduler to run _model partitions_, potentially synchronized between more than one FMU and exchanging input and output variables accordingly.
 
 |_simulation_
-|Compute the behavior of one or several _models_ under specified conditions. +
-(see also _co-simulation_)
+|Compute the behavior of one or several _models_ under specified conditions
+(see also _co-simulation_).
 
 |_simulation model_
-|see _model_
+|See _model_.
 
 |_simulation program_
 |Software to develop and/or solve simulation _models_.
-The software includes a _solver_, may include a user interface and methods for post processing (see also: _simulation tool_, _simulation environment_). +
+The software includes a _solver_, may include a user interface and methods for post processing (see also _simulation tool_, _simulation environment_).
 
 |_simulation tool_
-|see _simulation program_
+|See _simulation program_.
 
 |_simulator_
 |A simulator can include one or more _simulation programs_, which solve a common simulation task.
 
 |_simulator coupling_
-|See _tool coupling_.
+|See _co-simulation_.
 
 |_solver_
 |_Software component,_ which includes algorithms to solve _models_, for example, _integration algorithms_ and _event handling_ methods.
@@ -247,7 +249,7 @@ Therefore, this event can be handled efficiently.
 |A moment in time, either a continuous-time instant latexmath:[\mathbf{t} = \mathbf{t}_R], or a super-dense time instant latexmath:[\mathbf{t} = (\mathbf{t}_R, \mathbf{t}_I)], see also <<super-dense-time>>.
 
 | [[tlm,TLM]]_TLM_
-| See <<transmission-line-modeling>>
+| See <<transmission-line-modeling>>.
 
 |[[transmission-line-modeling,Transmission Line Modeling]]_Transmission Line Modeling_
 |A mathematical method which uses physically motivated time delays to decouple an equation system into independent parts during a specified time frame without compromising numerical stability.

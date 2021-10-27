@@ -1323,6 +1323,7 @@ image::images/schema/Enumeration.png[width=70%, align="center"]
 .Clock element.
 [[figure-schema-Clock]]
 image::images/schema/Clock.png[width=70%, align="center"]
+#TODO: Why is the default causality for clocks local, if they can only be inputs and outputs? Should the default value for causality for an fmi3AbstractVariable be removed?
 
 The attributes are defined in <<table-type-details>> and <<table-variableBase-attributes>>, except:
 
@@ -1410,7 +1411,9 @@ Variables with <<causality>> = <<parameter>> or <<input>>, as well as variables 
 
 - If <<causality>> = <<parameter>>, the <<start>> value is the value of it.
 
-- If <<causality>> = <<input>>, the <<start>> value is used by the model as value of the <<input>>, if the <<input>> is not set by the environment, except for variables of type <<Clock>>.
+- If <<causality>> = <<input>>, the <<start>> value is used by the model as value of the <<input>>, if the <<input>> is not set by the environment.
+
+#TODO: "except for variables of type Clock" should be removed here and a general remark should be added at the beginning of the description of "start" that the following is true for for all variables but clocks, because clocks do not have a start value.
 
 - If <<variability>> = <<constant>>, the <<start>> value is the value of the constant.
 

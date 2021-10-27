@@ -24,7 +24,7 @@ Concrete features to support vECU export are:
 
 * addition of the new interface type "Scheduled Execution" (see <<fmi-for-scheduled-execution>>) that allows activation of individual model partitions (or tasks) by an external scheduler, e.g. on real-time platforms.
 
-A second need of the simulation community was address by introducing the more advanced co-simulation interface type <<fmi-for-co-simulation,FMI for Co-Simulation>>.
+A second need of the simulation community was addressed by introducing the more advanced co-simulation interface type <<fmi-for-co-simulation,FMI for Co-Simulation>>.
 New features, like
 
 * <<early-return,early return>> from a <<fmi3DoStep>> call,
